@@ -3,17 +3,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'mvnw -B -DskipTests clean package'
+                sh 'mvn -B -DskipTests clean package'
             }
         }
         stage('Test') { 
             steps {
-                sh 'mvnw test' 
+                sh 'mvn test' 
             }
         }
         stage('Deliver') {
             steps {
-                sh 'mvnw spring-boot:build-image'
+                sh 'mvn spring-boot:build-image'
             }
         }
     }
