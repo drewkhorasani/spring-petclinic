@@ -301,8 +301,15 @@
         <enabled>false</enabled>
       </snapshots>
     </repository>
+    <repository>
+        <id>central</id>
+        <url>https://jcenter.bintray.com</url>
+        <name>bintray</name>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
+    </repository>
   </repositories>
-
   <pluginRepositories>
     <pluginRepository>
       <id>spring-snapshots</id>
@@ -319,6 +326,14 @@
       <snapshots>
         <enabled>false</enabled>
       </snapshots>
+    </pluginRepository>
+    <pluginRepository>
+        <id>central</id>
+        <url>https://jcenter.bintray.com</url>
+        <name>bintray-plugins</name>
+        <snapshots>
+            <enabled>false</enabled>
+        </snapshots>
     </pluginRepository>
   </pluginRepositories>
 
