@@ -1,3 +1,25 @@
+# Source Repo Setup
+Forked petclinic repo and added jcentral repo as central to root level pom.xml, so dependencies resolve via jcentral.
+
+# Jenkins Setup
+
+## Prereqs
+JFrog Plugin for Jenkins configured to use trial JFrog instance.
+
+## Pipeline
+**Build stage**: Uses mvn to compile and package into a jar. Skipping tests to run in a separte stage.
+
+**Test stage**: Uses mvn test to run integration tests built into petclinic app.
+
+**Deliver stage**: Uses spring-boot to build Docker image and JF cli to upload target dir to JFrog Artifactory using instance referenced in prereqs.
+
+
+# Dockerfile
+Uses eclipse-temurin:17-jdk-jammy as our base image
+Copies pom.xml, mvn wrapper, and source code into image
+Uses spring-boot:run to initiate petclinic application on deployment
+
+
 # Spring PetClinic Sample Application [![Build Status](https://github.com/spring-projects/spring-petclinic/actions/workflows/maven-build.yml/badge.svg)](https://github.com/spring-projects/spring-petclinic/actions/workflows/maven-build.yml)
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/spring-projects/spring-petclinic) [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=7517918)
