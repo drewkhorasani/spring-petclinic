@@ -16,7 +16,7 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh 'mvn spring-boot:build-image'
+                sh 'docker build -t petclinic:latest .'
                 jf 'rt u target/ jfrog-interview-libs-snapshot-local/'
             }
         }
