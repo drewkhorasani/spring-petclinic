@@ -17,7 +17,7 @@ pipeline {
         stage('Deliver') {
             steps {
                 sh 'mvn spring-boot:build-image'
-                jf 'rt u target/ jfrog-interview-docker-remote/'
+                jf 'rt u target/ jfrog-interview-libs-snapshot-local/'
             }
         }
     }
